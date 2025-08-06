@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garment Customization</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .color-picker {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold mb-6 text-center">Garment Customization</h1>
+
+        <!-- Stage 1: Choose Garment Type -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">1. Choose the type of garment</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <input type="radio" id="abaya" name="garment-type" value="abaya" class="mr-2">
+                    <label for="abaya">Abaya</label>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <input type="radio" id="dress" name="garment-type" value="dress" class="mr-2">
+                    <label for="dress">Dress</label>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <input type="radio" id="ensemble" name="garment-type" value="ensemble" class="mr-2">
+                    <label for="ensemble">Ensemble</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stage 2: Determine Cut -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">2. Determine the cut</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <input type="radio" id="open-abaya" name="cut-type" value="open-abaya" class="mr-2">
+                    <label for="open-abaya">Open Abaya</label>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <input type="radio" id="closed-abaya" name="cut-type" value="closed-abaya" class="mr-2">
+                    <label for="closed-abaya">Closed Abaya</label>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <input type="radio" id="traditional" name="cut-type" value="traditional" class="mr-2">
+                    <label for="traditional">Traditional Tailoring</label>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <input type="radio" id="modern" name="cut-type" value="modern" class="mr-2">
+                    <label for="modern">Modern Tailoring</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stage 3: Select Fabric -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">3. Select the fabric</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <input type="radio" id="crepe" name="fabric" value="crepe" class="mr-2">
+                    <label for="crepe">Crepe</label>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <input type="radio" id="chiffon" name="fabric" value="chiffon" class="mr-2">
+                    <label for="chiffon">Chiffon</label>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <input type="radio" id="linen" name="fabric" value="linen" class="mr-2">
+                    <label for="linen">Linen</label>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <input type="radio" id="silk" name="fabric" value="silk" class="mr-2">
+                    <label for="silk">Silk</label>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <input type="radio" id="designer-choice" name="fabric" value="designer-choice" class="mr-2">
+                    <label for="designer-choice">Leave to designer's choice</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stage 4: Pick Colors -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">4. Pick the colors</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label for="color-picker" class="block mb-2">Color Picker</label>
+                    <input type="color" id="color-picker" class="w-full">
+                </div>
+                <div>
+                    <label class="block mb-2">Ready-made palettes</label>
+                    <div class="flex gap-2">
+                        <div class="w-8 h-8 bg-blue-500 rounded cursor-pointer hover:opacity-80"></div>
+                        <div class="w-8 h-8 bg-pink-500 rounded cursor-pointer hover:opacity-80"></div>
+                        <div class="w-8 h-8 bg-green-500 rounded cursor-pointer hover:opacity-80"></div>
+                        <div class="w-8 h-8 bg-purple-500 rounded cursor-pointer hover:opacity-80"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stage 5: Select Patterns/Embroidery -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">5. Select patterns/embroidery</h2>
+            <div class="grid grid-cols-3 gap-4">
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <img src="https://placehold.co/100/100" alt="Pattern 1" class="w-full mb-2">
+                    <p>Floral Embroidery</p>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <img src="https://placehold.co/100/100" alt="Pattern 2" class="w-full mb-2">
+                    <p>Geometric Design</p>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <img src="https://placehold.co/100/100" alt="Pattern 3" class="w-full mb-2">
+                    <p>Abstract Print</p>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <img src="https://placehold.co/100/100" alt="Pattern 4" class="w-full mb-2">
+                    <p>Embroidered Border</p>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <img src="https://placehold.co/100/100" alt="Pattern 5" class="w-full mb-2">
+                    <p>Lace Insert</p>
+                </div>
+                <div class="p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition">
+                    <label class="block mb-2">Upload your own design</label>
+                    <input type="file" class="w-full">
+                </div>
+            </div>
+        </div>
+
+        <!-- Stage 6: Specify Measurements -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">6. Specify measurements and lengths</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label for="bust" class="block mb-2">Bust (cm)</label>
+                    <input type="number" id="bust" class="w-full p-2 border border-gray-300 rounded">
+                </div>
+                <div>
+                    <label for="waist" class="block mb-2">Waist (cm)</label>
+                    <input type="number" id="waist" class="w-full p-2 border border-gray-300 rounded">
+                </div>
+                <div>
+                    <label for="hips" class="block mb-2">Hips (cm)</label>
+                    <input type="number" id="hips" class="w-full p-2 border border-gray-300 rounded">
+                </div>
+                <div>
+                    <label for="height" class="block mb-2">Height (cm)</label>
+                    <input type="number" id="height" class="w-full p-2 border border-gray-300 rounded">
+                </div>
+                <div>
+                    <label for="shoulder-width" class="block mb-2">Shoulder Width (cm)</label>
+                    <input type="number" id="shoulder-width" class="w-full p-2 border border-gray-300 rounded">
+                </div>
+                <div>
+                    <label for="sleeve-length" class="block mb-2">Sleeve Length (cm)</label>
+                    <input type="number" id="sleeve-length" class="w-full p-2 border border-gray-300 rounded">
+                </div>
+                <div class="col-span-2">
+                    <label for="special-requests" class="block mb-2">Special Requests</label>
+                    <textarea id="special-requests" rows="4" class="w-full p-2 border border-gray-300 rounded"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <button class="w-full bg-blue-500 text-white py-3 rounded hover:bg-blue-600 transition">Submit Customization</button>
+    </div>
+</body>
+</html>
