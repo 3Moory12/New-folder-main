@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.design-stages {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stage {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.stage.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.stage-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.stage-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.stage-content {
+    display: none;
+}
+
+.stage.active .stage-content {
+    display: block;
+}
+
+.garment-types, .cut-types, .fabric-types, .pattern-library {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.garment-option, .cut-option, .fabric-option, .pattern-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.garment-option:hover, .cut-option:hover, .fabric-option:hover, .pattern-option:hover {
+    border-color: #2c3e50;
+    transform: translateY(-2px);
+}
+
+.garment-option input[type="radio"],
+.cut-option input[type="radio"],
+.fabric-option input[type="radio"],
+.pattern-option input[type="radio"] {
+    margin-bottom: 10px;
+}
+
+.garment-option label, .cut-option label, .fabric-option label, .pattern-option label {
+    text-align: center;
+}
+
+.color-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.color-picker input[type="color"] {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.measurement-guide {
+    display: flex;
+    gap: 30px;
+}
+
+.measurement-instructions {
+    flex: 1;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.measurement-fields {
+    flex: 1;
+    display: grid;
+    gap: 15px;
+}
+
+.measurement-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.measurement-field label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.measurement-field input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.upload-placeholder {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #ddd;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-placeholder:hover {
+    border-color: #2c3e50;
+    background-color: #f8f9fa;
+}
+
+.upload-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.prev-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.next-btn {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.submit-btn {
+    background-color: #28a745;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .measurement-guide {
+        flex-direction: column;
+    }
+
+    .garment-types, .cut-types, .fabric-types, .pattern-library {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
